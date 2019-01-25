@@ -11,12 +11,15 @@
     "cookie-parser": "1.4.3",
     "debug": "2.2.0",
     "express": "4.13.4",
+    "express-fileupload": "^1.1.1-alpha.1",
     "jade": "1.11.0",
     "morgan": "1.7.0",
+    "request": "^2.88.0",
     "serve-favicon": "2.3.0",
     "stylus": "0.54.5"
   },
   "devDependencies": {
+    "@types/request": "^2.48.1",
     "mocha": "3.1.0"
   }
 }

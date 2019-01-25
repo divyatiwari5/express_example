@@ -1,21 +1,40 @@
 var app = require('../app'),
   assert = require('assert'),
-  http = require('http');
+  http = require('http'),
+  request = require('request');
 
-describe('GET /', function(){
-  before(function() {
-      var port = '3000';
-      app.set('port', port);
-      var server = http.createServer(app);
-      server.listen(port);
+
+describe('GET /', function () {
+  before(function () {
+    var port = '3000';
+    app.set('port', port);
+    var server = http.createServer(app);
+    server.listen(port);
   });
 
-  it('should return a 200 status code', function (done){
-    http.get({ host: '0.0.0.0', port: 3000 }, function(res) {
-      assert.deepEqual(res.statusCode, 404);
+  it('should return a 200 status code', function (done) {
+    request({
+      url: 'http://localhost:3000/'
+    }, function (error, response, body) {
+      // Do more stuff with 'body' here
+      if(error){
+        throw new Error(error);
+      }
+      assert.deepEqual(response.statusCode, 200);
       done();
-    }).on('error', function(e) {
-      throw new Error(e);
+    });
+  });
+
+  it('should contain mlabs in body', function (done) {
+    request({
+      url: 'http://localhost:3000/'
+    }, function (error, response, body) {
+      // Do more stuff with 'body' here
+      if(error){
+        throw new Error(error);
+      }
+      assert.deepEqual(response.body, "mlabs");
+      done();
     });
   });
 
