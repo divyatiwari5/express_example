@@ -23,7 +23,6 @@ router.get('/about', function(req, res){
   var fileLocation = path.join('/home/divya/Downloads/Cultyvate/', file);
   //res.writeHead(200, {'Content-Type': Image});
   res.sendFile(fileLocation,file);
- // res.download('https://www.google.com/search?q=image&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjfnLO7hYngAhVD_GEKHRVNDTYQ_AUIDigB&biw=1305&bih=675#imgrc=8c_UAo3gH_220M:', "Download");
 });
 
 router.get('/download', function(req, res){
@@ -31,7 +30,8 @@ router.get('/download', function(req, res){
   var fileLocation = path.join('/home/divya/Downloads/Cultyvate/', file);
   console.log(fileLocation);
   res.sendFile(fileLocation, file);
-  res.download(fileLocation, file);
+  res.contentType('.png');
+ // res.download(fileLocation, file);
 });
 
 router.get('/contact', function(req, res){

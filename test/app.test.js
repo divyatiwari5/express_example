@@ -38,4 +38,17 @@ describe('GET /', function () {
     });
   });
 
+  // it('should contain .png file only', function (done){
+  //   request({
+  //     url: 'http://localhost:3000/download'
+  //   }, function(error, response, body) {
+  //     if(error) {
+  //       throw new Error(error);
+  //       console.log(error);
+  //     } 
+  //     assert.deepEqual(response.contentType, '.png');
+  //     done();
+  //   });
+  // });
+
 });
